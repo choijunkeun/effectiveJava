@@ -1,4 +1,4 @@
-package ex1;
+package builderEx;
 
 // 라면 설계도
 public class Ramen {
