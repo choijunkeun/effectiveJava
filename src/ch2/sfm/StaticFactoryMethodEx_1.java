@@ -1,13 +1,11 @@
-package ch2;
+package ch2.sfm;
 
-import java.lang.reflect.Array;
 import java.math.BigInteger;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.EnumSet;
-import java.util.List;
 
 
 class Car {
