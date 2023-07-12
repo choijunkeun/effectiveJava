@@ -11,11 +11,13 @@ public class ClientElvis {
 
         // Serialize (직렬화)
         try {
-            FileOutputStream fileOut = new FileOutputStream("out.txt");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+//            FileOutputStream fileOut = new FileOutputStream("out.txt");
+//            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("out.txt"));   // 위의 두줄을 다음 한줄로 표현 가능
+
             out.writeObject(e);
             out.close();
-            fileOut.close();
+//            fileOut.close();
         } catch (IOException io) {
             io.printStackTrace();
         }
@@ -25,11 +27,14 @@ public class ClientElvis {
         Elvis e2 = null;
 
         try {
-            FileInputStream fileIn = new FileInputStream("out.txt");
-            ObjectInputStream in = new ObjectInputStream(fileIn);
+//            FileInputStream fileIn = new FileInputStream("out.txt");
+//            ObjectInputStream in = new ObjectInputStream(fileIn);
+
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream("out.txt"));
+
             e2 = (Elvis) in.readObject();
             in.close();
-            fileIn.close();
+//            fileIn.close();
         } catch(IOException i) {
             i.printStackTrace();
         } catch (ClassNotFoundException ex) {
